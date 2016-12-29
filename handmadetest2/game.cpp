@@ -2,7 +2,7 @@
 #include <string.h>
 #include <conio.h>
 
-#include "main.h"
+#include "game.h"
 
 int main()
 {
