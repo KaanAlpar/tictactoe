@@ -20,6 +20,11 @@ int main()
 		{
 			break;
 		}
+		if (checkDraw(&game))
+		{
+			printf("Draw");
+			break;
+		}
 	}
 
 	_getch();
@@ -175,7 +180,7 @@ int checkWin(Game *game)
 		printf("Player 1 wins");
 		return 1;
 	}
-	else if (game->board[2][0] == game->playerX && game->board[1][1] == game->playerX && game->board[2][0] == game->playerX)
+	else if (game->board[2][0] == game->playerX && game->board[1][1] == game->playerX && game->board[0][2] == game->playerX)
 	{
 		printf("Player 1 wins");
 		return 1;
@@ -233,4 +238,21 @@ int validateInput(int input)
 	}
 
 	return 1;
+}
+
+int checkDraw(Game *game)
+{
+	int flag = 1;
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			if (game->board[i][j] == DEFAULT_CHAR)
+			{
+				flag = 0;
+			}
+		}
+	}
+
+	return flag;
 }

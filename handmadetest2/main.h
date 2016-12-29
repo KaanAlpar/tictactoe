@@ -21,3 +21,4 @@ void putChar(Game *game, int x, int y, char c);
 int checkPosition(Game *game, int x, int y);
 int checkWin(Game *game);
 int validateInput(int input);
+int checkDraw(Game *game);
